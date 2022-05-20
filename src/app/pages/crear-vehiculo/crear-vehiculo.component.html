@@ -1,0 +1,116 @@
+<style>
+    .grid_cont {
+        display: grid;
+        background-color: rgb(53, 149, 150);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .gri_img {
+        display: flex;
+        align-items: center;
+    }
+
+    .grid_form {
+        border-style: inset;
+        padding-right: 1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    .formulario {
+        width: min(60rem, 100%);
+        /*usaa el valor mas peque;o**/
+        margin: 0 auto;
+
+    }
+
+    .contenedor-campos {
+        display: grid;
+        padding-bottom: 0.5rem;
+    }
+
+    .campo {
+        margin-bottom: 1rem;
+    }
+
+    .imput-text {
+        width: 100%;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .alinear-derecha {
+        justify-content: flex-end;
+    }
+
+    .boton {
+        background-color: rgb(42, 89, 99);
+        color: var(--blanco);
+        padding: 1rem 3rem;
+        margin-top: 1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        width: 100%;
+        text-align: center;
+        border: none;
+    }
+
+    .boton:hover{
+        color: rgb(255, 255, 255);
+    }
+    
+    .w-100 {
+        width: 100%;
+    }
+</style>
+
+<div class="grid_cont">
+    <div class="gri_img">
+        <img src="/assets/register.png" alt="">
+    </div>
+    <div class="grid_form">
+        <section>
+            <h2>Ingreso de Auto</h2>
+            <form class="formulario">
+
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label style="margin-top: 0.5;">Placa</label>
+                        <input [(ngModel)]="auto.placa" name="txtPlaca" class="imput-text" type="text" placeholder="Ingrese Placa" />
+                    </div>
+
+                    <div class="campo">
+                        <label>Marca</label>
+                        <input [(ngModel)]="auto.marca" name="txtMarca" class="imput-text" type="text" placeholder="Ingrese Modelo" />
+                    </div>
+
+                    <div class="campo">
+                        <label>Color</label>
+                        <input [(ngModel)]="auto.color" name="txtColor" class="imput-text" type="email" placeholder="Ingrese Color" />
+                    </div>
+
+                    <div class="campo">
+                        <label>Puesto</label>
+                        <input [(ngModel)]="auto.puesto" name="txtPuesto" class="imput-text" type="number" placeholder="Ingrese Puesto" />
+                    </div>
+                </div>
+
+                <div class="alinear-derecha flex">
+                    <button class="boton w-100" (click)="guardar()">Ingresar</button>
+                </div>
+
+            </form>
+        </section>
+    </div>
+</div>
