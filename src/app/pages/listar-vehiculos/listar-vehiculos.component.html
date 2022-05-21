@@ -1,2 +1,47 @@
-<h1>Aqui se listan vehiculos</h1>
-<p>listar-vehiculos works!</p>
+<style>
+    .flex {
+        display: flex;
+        justify-content: center;
+    }
+
+    .rwd-table {
+        background: rgb(53, 149, 150);
+        ;
+        color: #fff;
+        border-radius: .4em;
+        overflow: hidden;
+    }
+
+    th,
+    td {
+        padding: 0.5rem;
+        text-align: center;
+    }
+</style>
+<div>
+    <div class="grid_form">
+        <h1>Listado de Vehiculos</h1>
+
+        <table class="rwd-table">
+            <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Placa</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Puesto</th>
+            </tr>
+            <tbody>
+                <tr *ngFor="let autos of listAutos | async">
+                    <td data-th=""><img src="assets/icon auto table.png" alt="iconoTable"></td>
+                    <td data-th="ID">{{autos.id}}</td>
+                    <td data-th="Placa">{{autos.placa}}</td>
+                    <td data-th="Modelo">{{autos.marca}}</td>
+                    <td data-th="Color">{{autos.color}}</td>
+                    <td data-th="Puesto">{{autos.puesto}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
